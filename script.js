@@ -3,6 +3,11 @@ function inserirDisplay(digito) {
     const display = document.querySelector('#display')
     const ultimoCaracter = display.value.slice(-1)
 
+    // Impede de começar com zero
+    if (display.value === 'ERRO') {
+        display.value = ''
+    }
+
     // Impede de começar com um operador inválido
     if (display.value === '' && ['+', '-', '*', '/'].includes(digito)) {
         return
